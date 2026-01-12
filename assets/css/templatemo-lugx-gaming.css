@@ -676,9 +676,24 @@ Banner Style
   margin-bottom: 40px;
 }
 
+.main-banner .caption h1 {
+  font-size: 48px;
+  color: #cccccc;
+  margin-top: 20px;
+  position: relative;
+  padding-bottom: 5px;
+  margin-bottom: 40px;
+}
+
+
+.main-banner .caption h3 {
+  font-size: 30px;
+  color: #53201c;
+}
+
+
 .main-banner .caption h2:after {
   position: absolute;
-  background-image: url(../images/caption-dec.png);
   width: 202px;
   height: 12px;
   content: '';
