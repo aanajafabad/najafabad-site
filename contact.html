@@ -1,159 +1,567 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>درباره الکلی‌های ناشناس · ناحیه ۱۴</title>
 
-  <head>
+  <!-- Preconnect for faster CDN -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <!-- Optimized Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
-    <title>درباره الکلی های ناشناس ناحیه ۱۴</title>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap 5 (RTL) - async -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.rtl.min.css" media="all" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.rtl.min.css"></noscript>
 
+  <style>
+    /* ===== CRITICAL CSS ===== */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f4f7fc;
+      color: #102a43;
+      line-height: 1.7;
+    }
+    .rtl { direction: rtl; text-align: right; }
+    a { text-decoration: none; color: inherit; }
 
-    <!-- Additional CSS Files -->
-    <link rel="stylesheet" href="assets/css/fontawesome.css">
-    <link rel="stylesheet" href="assets/css/templatemo-lugx-gaming.css">
-    <link rel="stylesheet" href="assets/css/owl.css">
-    <link rel="stylesheet" href="assets/css/animate.css">
-    <link rel="stylesheet"href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
-<!--
+    /* Preloader */
+    .js-preloader {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: #0b1f33;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      transition: opacity 0.4s ease;
+    }
+    .js-preloader.hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+    .loader {
+      width: 40px;
+      height: 40px;
+      border: 4px solid rgba(255,255,255,0.1);
+      border-top: 4px solid #3a86ff;
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
 
-TemplateMo 589 lugx gaming
+    /* Header */
+    .header-area {
+      background: #0b1f33;
+      padding: 10px 0;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      backdrop-filter: blur(4px);
+      background: rgba(11, 31, 51, 0.95);
+      border-bottom: 2px solid rgba(58, 134, 255, 0.3);
+    }
+    .main-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      flex-wrap: wrap;
+    }
+    .nav li a {
+      color: #e3edf7;
+      font-weight: 500;
+      font-size: 0.95rem;
+      padding: 5px 12px;
+      border-radius: 40px;
+      transition: 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .nav li a:hover,
+    .nav li a.active {
+      background: #3a86ff;
+      color: #fff;
+    }
+    .nav .highlight-link {
+      background: #3a86ff;
+      color: #fff;
+      font-weight: 600;
+      padding: 7px 20px;
+      border-radius: 40px;
+    }
+    .nav .highlight-link:hover {
+      background: #5a9aff;
+    }
+    .menu-trigger {
+      display: none;
+      color: #fff;
+      font-size: 1.4rem;
+      cursor: pointer;
+    }
+    @media (max-width: 992px) {
+      .nav {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        padding: 15px 0 8px;
+        border-top: 1px solid rgba(255,255,255,0.08);
+      }
+      .nav.show { display: flex; }
+      .menu-trigger { display: block; }
+    }
 
-https://templatemo.com/tm-589-lugx-gaming
+    /* Page Heading / Hero */
+    .page-heading {
+      background: linear-gradient(145deg, #0b1f33 0%, #1b3b5c 100%);
+      padding: 50px 0 40px;
+      color: #fff;
+      border-bottom: 5px solid #3a86ff;
+      text-align: center;
+    }
+    .page-heading h3 {
+      font-weight: 700;
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+    .page-heading h3 i {
+      color: #5a9aff;
+      margin-left: 10px;
+    }
+    .page-heading .breadcrumb {
+      display: block;
+      font-size: 1.05rem;
+      color: #c8dbe9;
+      max-width: 850px;
+      margin: 0 auto;
+      line-height: 2;
+      background: rgba(58, 134, 255, 0.06);
+      padding: 20px 28px;
+      border-radius: 20px;
+      border-right: 4px solid #3a86ff;
+    }
+    .page-heading .breadcrumb h2 {
+      font-weight: 400;
+      font-size: 1rem;
+      color: #c8dbe9;
+      margin: 0;
+    }
 
--->
-  </head>
+    /* Contact Section */
+    .contact-page {
+      padding: 50px 0 40px;
+    }
+    .section-heading h6 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #0b1f33;
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 3px solid #3a86ff;
+      display: inline-block;
+    }
+    .left-text ul {
+      list-style: none;
+      padding: 0;
+      margin: 20px 0;
+    }
+    .left-text ul li {
+      padding: 14px 18px;
+      margin-bottom: 12px;
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.04);
+      border-right: 4px solid #3a86ff;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .left-text ul li span {
+      font-weight: 700;
+      color: #0b1f33;
+      font-size: 0.9rem;
+      letter-spacing: 0.5px;
+    }
+    .left-text ul li span i {
+      color: #3a86ff;
+      margin-left: 8px;
+      width: 20px;
+    }
 
+    /* Form */
+    .right-content {
+      background: #fff;
+      padding: 30px 28px;
+      border-radius: 24px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.05);
+      border: 1px solid #e2ebf6;
+    }
+    .right-content .section-heading h6 {
+      font-size: 1rem;
+      margin-bottom: 12px;
+    }
+    fieldset {
+      border: none;
+      margin: 0 0 12px 0;
+      padding: 0;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 12px 16px;
+      border: 2px solid #e2ebf6;
+      border-radius: 14px;
+      font-family: inherit;
+      font-size: 0.95rem;
+      transition: 0.25s;
+      background: #f9fbfd;
+    }
+    input:focus, textarea:focus {
+      outline: none;
+      border-color: #3a86ff;
+      background: #fff;
+      box-shadow: 0 0 0 4px rgba(58, 134, 255, 0.08);
+    }
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+    .orange-button {
+      background: #3a86ff;
+      color: #fff;
+      font-weight: 600;
+      padding: 12px 32px;
+      border: none;
+      border-radius: 60px;
+      font-size: 1rem;
+      transition: 0.25s;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .orange-button:hover {
+      background: #5a9aff;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(58, 134, 255, 0.3);
+    }
+    .orange-button:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+
+    /* Alert messages */
+    .alert {
+      padding: 14px 20px;
+      border-radius: 14px;
+      margin-top: 16px;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .alert-success {
+      background: #e8f5e9;
+      color: #1b5e20;
+      border-right: 4px solid #4caf50;
+    }
+    .alert-danger {
+      background: #ffebee;
+      color: #b71c1c;
+      border-right: 4px solid #f44336;
+    }
+    .alert-info {
+      background: #e3f2fd;
+      color: #0d47a1;
+      border-right: 4px solid #3a86ff;
+    }
+    .alert i {
+      font-size: 1.2rem;
+    }
+
+    /* Footer */
+    footer {
+      background: #0b1f33;
+      padding: 25px 0 15px;
+      color: #c8dbe9;
+      border-top: 4px solid #3a86ff;
+      text-align: center;
+    }
+    footer p {
+      margin: 3px 0;
+      font-size: 0.9rem;
+    }
+    footer p i {
+      color: #3a86ff;
+      margin: 0 5px;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .page-heading h3 { font-size: 1.8rem; }
+      .page-heading .breadcrumb { font-size: 0.95rem; padding: 16px; }
+      .right-content { padding: 20px 16px; }
+      .left-text ul li { padding: 12px 14px; }
+    }
+  </style>
+</head>
 <body>
 
-  <!-- ***** Preloader Start ***** -->
-  <div id="js-preloader" class="js-preloader">
-    <div class="preloader-inner">
-      <span class="dot"></span>
-      <div class="dots">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
+<!-- Preloader -->
+<div id="js-preloader" class="js-preloader">
+  <div class="loader"></div>
+</div>
+
+<!-- Header -->
+<header class="header-area">
+  <div class="container">
+    <div class="main-nav">
+      <ul class="nav" id="mainNav">
+        <li><a href="index.html"><i class="fas fa-home"></i> خانه</a></li>
+        <li><a href="#" class="active"><i class="fas fa-address-card"></i> درباره ما</a></li>
+        <li><a href="#"><i class="fas fa-map-pin"></i> آدرس جلسات</a></li>
+        <li><a href="IsAAForYou.html"><i class="fas fa-question-circle"></i> آیا AA برای شماست؟</a></li>
+        <li><a href="https://search.eitaa.com/?url=https://drive.google.com/file/d/1xxkrunuuBk-DpH8304ROuikieVzjiV3P/view?usp=drivesdkl" class="highlight-link"><i class="fas fa-download"></i> دریافت فایل</a></li>
+      </ul>
+      <a class="menu-trigger" id="menuTrigger"><i class="fas fa-bars"></i></a>
     </div>
   </div>
-  <!-- ***** Preloader End ***** -->
+</header>
 
-  <!-- ***** Header Area Start ***** -->
-  <header class="header-area header-sticky">
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <nav class="main-nav">
-                    <!-- ***** Logo End ***** -->
-                    <!-- ***** Menu Start ***** -->
-                    <ul class="nav">
-                      <li><a href="shop.html">آدرس جلسات</a></li>
-                      <li><a href="index.html">خانه</a></li>
-                  </ul>   
-                    <a class='menu-trigger'>
-                        <span>Menu</span>
-                    </a>
-                    <!-- ***** Menu End ***** -->
-                </nav>
-            </div>
-        </div>
-    </div>
-  </header>
-  <!-- ***** Header Area End ***** -->
-
-  <div class="page-heading header-text">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12">
-          <h3>درباره ما</h3>
-          <span class="breadcrumb">
-             <h2>الکلی های ناشناس انجمن افرادی است که تجربه، نیرو و امید خود را با یکدیگر مشارکت میکنند تا شاید بتوانند مشکل مشترکشان را حل کنند و دیگران را نیز در بهبودی از بیماری الکلیسم یاری دهند.
-تنها لازمه ی عضویت، تمایل به توقف نوشیدن الکل است.
-در الکلی های ناشناس حق عضویت و یا پرداختی وجود ندارد، ما از طریق کمک های داوطلبانه خودمان، خودکفا هستیم. الکلی های ناشناس با هیچ فرقه مذهبی ، سیاستی ، سازمان و یا نهادی پیوستگی ندارد و مایل به موضع گیری در مباحث و مشاجرات نیست و هیچ موضوعی را رد یا قبول نمیکند. هدف اصلی ما هوشیاری و کمک به دیگر الکلی ها است تا به هوشیاری برسند</p>
-          </span>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="contact-page section">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-6 align-self-center">
-          <div class="left-text">
-            <div class="section-heading">
-              <h6>راه های ارتباطی با ما</h6>
-            </div>
-            <ul>
-              <li><span>آدرس دفتر مرکزی</span> تهران - ...</li>
-              <li><span>شماره ماندگار ناحیه ۱۴</span> ۰۹۱۳ ۷۴۹ ۶۹۰۴</li>
-              <li><span>آدرس ایمیل ناحیه ۱۴</span> aa.najafabad@gmail.com</li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-lg-6">
-          <div class="right-content">
-            <div class="row">
-              <div class="col-lg-12">
-                <div class="section-heading">
-              <h6>پیامتان را برایمان بنویسید. ما در اسرع وقت با شما تماس میگیریم</h6>
-            </div>
-              </div>
-              <div class="col-lg-12">
-                <form id="contact-form" action="" method="post">
-                  <div class="row">
-                    <div class="col-lg-6">
-                      <fieldset>
-                        <input type="name" name="name" id="name" placeholder="نام" autocomplete="on" required>
-                      </fieldset>
-                    </div>
-                    <div class="col-lg-6">
-                      <fieldset>
-                        <input type="text" name="email" id="email" pattern="[^ @]*@[^ @]*" placeholder="ایمیل" required="">
-                      </fieldset>
-                    </div>
-                    <div class="col-lg-12">
-                      <fieldset>
-                        <textarea name="message" id="message" placeholder="... پیام شما "></textarea>
-                      </fieldset>
-                    </div>
-                    <div class="col-lg-12">
-                      <fieldset>
-                        <button type="submit" id="form-submit" class="orange-button">Send Message Now</button>
-                      </fieldset>
-                    </div>
-                  </div>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>  
-
-  <footer>
-    <div class="container">
+<!-- Page Heading -->
+<section class="page-heading">
+  <div class="container">
+    <div class="row">
       <div class="col-lg-12">
-        <p> .الکلی های ناشناس ناحیه ۱۴ خدماتی زیر نظر ساختار ایران - تهران میباشد &nbsp;&nbsp;</p>
-        <p> .تمامی حقوق نزد الکلی های ناشناس ناحیه ۱۴ خدماتی ایران، نجف آباد محفوظ میباشد &nbsp;&nbsp;</p>
+        <h3><i class="fas fa-hand-holding-heart"></i> درباره ما</h3>
+        <div class="breadcrumb">
+          <h2>
+            الکلی‌های ناشناس انجمن افرادی است که تجربه، نیرو و امید خود را با یکدیگر مشارکت میکنند تا شاید بتوانند مشکل مشترکشان را حل کنند و دیگران را نیز در بهبودی از بیماری الکلیسم یاری دهند.
+            <br><br>
+            تنها لازمه‌ی عضویت، تمایل به توقف نوشیدن الکل است.
+            در الکلی‌های ناشناس حق عضویت و یا پرداختی وجود ندارد، ما از طریق کمک‌های داوطلبانه خودمان، خودکفا هستیم. الکلی‌های ناشناس با هیچ فرقه مذهبی، سیاستی، سازمان و یا نهادی پیوستگی ندارد و مایل به موضع‌گیری در مباحث و مشاجرات نیست و هیچ موضوعی را رد یا قبول نمیکند. هدف اصلی ما هوشیاری و کمک به دیگر الکلی‌ها است تا به هوشیاری برسند.
+          </h2>
+        </div>
       </div>
     </div>
-  </footer>
+  </div>
+</section>
 
-  <!-- Scripts -->
-  <!-- Bootstrap core JavaScript -->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-  <script src="assets/js/isotope.min.js"></script>
-  <script src="assets/js/owl-carousel.js"></script>
-  <script src="assets/js/counter.js"></script>
-  <script src="assets/js/custom.js"></script>
+<!-- Contact Section -->
+<section class="contact-page">
+  <div class="container">
+    <div class="row g-4">
+      <!-- Left: Contact Info -->
+      <div class="col-lg-6">
+        <div class="left-text">
+          <div class="section-heading">
+            <h6><i class="fas fa-phone-alt text-blue me-2" style="color:#3a86ff;"></i> راه‌های ارتباطی با ما</h6>
+          </div>
+          <ul>
+            <li>
+              <span><i class="fas fa-location-dot"></i> آدرس دفتر مرکزی</span>
+              تهران - خیابان ... - پلاک ...
+            </li>
+            <li>
+              <span><i class="fas fa-phone"></i> شماره ماندگار ناحیه ۱۴</span>
+              ۰۹۱۳۷۴۹۶۹۰۴
+            </li>
+            <li>
+              <span><i class="fas fa-envelope"></i> آدرس ایمیل ناحیه ۱۴</span>
+              aa.najafabad@gmail.com
+            </li>
+            <li>
+              <span><i class="fas fa-globe"></i> وبسایت رسمی ایران</span>
+              <a href="https://iranaa.org/" target="_blank" style="color:#3a86ff; font-weight:600;">iranaa.org</a>
+            </li>
+          </ul>
+        </div>
+      </div>
 
-  </body>
+      <!-- Right: Contact Form -->
+      <div class="col-lg-6">
+        <div class="right-content">
+          <div class="section-heading">
+            <h6><i class="fas fa-pen me-2" style="color:#3a86ff;"></i> پیامتان را برایمان بنویسید. ما در اسرع وقت با شما تماس می‌گیریم</h6>
+          </div>
+          
+          <!-- Status Messages -->
+          <div id="form-status"></div>
+          
+          <!-- ============================================ -->
+          <!-- 🔴 IMPORTANT: Get your Formspree ID below    -->
+          <!-- ============================================ -->
+          <form id="contact-form" action="https://formspree.io/f/mqapjgvp" method="POST">
+            <div class="row g-2">
+              <div class="col-lg-6">
+                <fieldset>
+                  <input type="text" name="name" id="name" placeholder="نام کامل" autocomplete="on" required>
+                </fieldset>
+              </div>
+              <div class="col-lg-6">
+                <fieldset>
+                  <input type="email" name="email" id="email" placeholder="ایمیل" required>
+                </fieldset>
+              </div>
+              <div class="col-lg-12">
+                <fieldset>
+                  <input type="text" name="phone" id="phone" placeholder="شماره تماس (اختیاری)">
+                </fieldset>
+              </div>
+              <div class="col-lg-12">
+                <fieldset>
+                  <textarea name="message" id="message" placeholder="پیام شما ..." required></textarea>
+                </fieldset>
+              </div>
+              <div class="col-lg-12">
+                <fieldset>
+                  <!-- Honeypot to prevent spam -->
+                  <input type="text" name="_gotcha" style="display:none">
+                  <!-- Redirect after success -->
+                  <input type="hidden" name="_next" value="https://your-website.com/thankyou.html">
+                  <!-- Subject of email -->
+                  <input type="hidden" name="_subject" value="📩 پیام جدید از سایت الکلی‌های ناشناس">
+                  <button type="submit" id="form-submit" class="orange-button">
+                    <i class="fas fa-paper-plane"></i> ارسال پیام
+                  </button>
+                </fieldset>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <p><i class="fas fa-heart" style="color:#3a86ff;"></i> الکلی‌های ناشناس ناحیه ۱۴ خدماتی · زیر نظر ساختار ایران · تهران</p>
+        <p class="small opacity-75">تمامی حقوق نزد الکلی‌های ناشناس ناحیه ۱۴ خدماتی ایران، نجف‌آباد محفوظ میباشد</p>
+        <p class="small mt-1"><i class="far fa-clock"></i> بهبودی یک روز در میان ...</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Scripts -->
+<script>
+  // Preloader
+  window.addEventListener('load', function() {
+    const preloader = document.getElementById('js-preloader');
+    preloader.classList.add('hidden');
+    setTimeout(() => { preloader.style.display = 'none'; }, 400);
+  });
+
+  // Mobile menu toggle
+  const trigger = document.getElementById('menuTrigger');
+  const nav = document.getElementById('mainNav');
+  if (trigger) {
+    trigger.addEventListener('click', function(e) {
+      e.preventDefault();
+      nav.classList.toggle('show');
+    });
+  }
+
+  // Close menu on link click (mobile)
+  document.querySelectorAll('#mainNav a').forEach(link => {
+    link.addEventListener('click', () => {
+      if (window.innerWidth < 992) nav.classList.remove('show');
+    });
+  });
+
+  // ============================================
+  // FORM HANDLING WITH AJAX
+  // ============================================
+  
+  const form = document.getElementById('contact-form');
+  const statusDiv = document.getElementById('form-status');
+  const submitBtn = document.getElementById('form-submit');
+
+  form.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    
+    // Show loading state
+    const originalText = submitBtn.innerHTML;
+    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> در حال ارسال...';
+    submitBtn.disabled = true;
+    
+    const formData = new FormData(form);
+    
+    try {
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+      
+      if (response.ok) {
+        showAlert('success', '✅ پیام شما با موفقیت ارسال شد. به زودی با شما تماس می‌گیریم.');
+        form.reset();
+      } else {
+        const data = await response.json();
+        showAlert('danger', '❌ ' + (data.error || 'خطا در ارسال پیام. لطفاً دوباره تلاش کنید.'));
+      }
+      
+    } catch (error) {
+      showAlert('danger', '❌ خطا در ارتباط با سرور. لطفاً دوباره تلاش کنید.');
+      console.error('Error:', error);
+    }
+    
+    submitBtn.innerHTML = originalText;
+    submitBtn.disabled = false;
+  });
+  
+  function showAlert(type, message) {
+    const icons = {
+      success: 'fa-check-circle',
+      danger: 'fa-exclamation-circle',
+      info: 'fa-info-circle'
+    };
+    statusDiv.innerHTML = `
+      <div class="alert alert-${type}">
+        <i class="fas ${icons[type] || 'fa-info-circle'}"></i>
+        ${message}
+      </div>
+    `;
+    
+    setTimeout(() => {
+      const alert = statusDiv.querySelector('.alert');
+      if (alert) {
+        alert.style.transition = 'opacity 0.5s';
+        alert.style.opacity = '0';
+        setTimeout(() => {
+          statusDiv.innerHTML = '';
+        }, 500);
+      }
+    }, 10000);
+  }
+</script>
+
+<!-- Bootstrap JS (deferred) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" defer></script>
+</body>
 </html>

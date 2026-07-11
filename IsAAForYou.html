@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>آیا الکلی‌های ناشناس برای شماست؟</title>
+
+  <!-- Preconnect for faster CDN -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+
+  <!-- Optimized Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Bootstrap 5 (RTL) - async -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.rtl.min.css" media="all" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.rtl.min.css"></noscript>
+
+  <style>
+    /* ===== CRITICAL CSS ===== */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f4f7fc;
+      color: #102a43;
+      line-height: 1.8;
+    }
+    .rtl { direction: rtl; text-align: right; }
+    a { text-decoration: none; color: inherit; }
+
+    /* Preloader */
+    .js-preloader {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: #0b1f33;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      transition: opacity 0.4s ease;
+    }
+    .js-preloader.hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+    .loader {
+      width: 40px;
+      height: 40px;
+      border: 4px solid rgba(255,255,255,0.1);
+      border-top: 4px solid #3a86ff;
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* Header */
+    .header-area {
+      background: #0b1f33;
+      padding: 10px 0;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      backdrop-filter: blur(4px);
+      background: rgba(11, 31, 51, 0.95);
+      border-bottom: 2px solid rgba(58, 134, 255, 0.3);
+    }
+    .main-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      flex-wrap: wrap;
+    }
+    .nav li a {
+      color: #e3edf7;
+      font-weight: 500;
+      font-size: 0.95rem;
+      padding: 5px 12px;
+      border-radius: 40px;
+      transition: 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .nav li a:hover,
+    .nav li a.active {
+      background: #3a86ff;
+      color: #fff;
+    }
+    .nav .highlight-link {
+      background: #3a86ff;
+      color: #fff;
+      font-weight: 600;
+      padding: 7px 20px;
+      border-radius: 40px;
+    }
+    .nav .highlight-link:hover {
+      background: #5a9aff;
+    }
+    .menu-trigger {
+      display: none;
+      color: #fff;
+      font-size: 1.4rem;
+      cursor: pointer;
+    }
+    @media (max-width: 992px) {
+      .nav {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        padding: 15px 0 8px;
+        border-top: 1px solid rgba(255,255,255,0.08);
+      }
+      .nav.show { display: flex; }
+      .menu-trigger { display: block; }
+    }
+
+    /* Page Heading / Hero */
+    .page-heading {
+      background: linear-gradient(145deg, #0b1f33 0%, #1b3b5c 100%);
+      padding: 50px 0 40px;
+      color: #fff;
+      border-bottom: 5px solid #3a86ff;
+      text-align: center;
+    }
+    .page-heading h3 {
+      font-weight: 700;
+      font-size: 2.5rem;
+      margin-bottom: 0;
+    }
+    .page-heading h3 i {
+      color: #5a9aff;
+      margin-left: 10px;
+    }
+
+    /* Content Section */
+    .single-product {
+      padding: 50px 0 40px;
+    }
+    .single-product .left-image {
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+      border: 3px solid #e2ebf6;
+      transition: 0.3s;
+      background: #dce5f0;
+      min-height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .single-product .left-image:hover {
+      border-color: #3a86ff;
+    }
+    .single-product .left-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: 0.3s;
+      object-fit: cover;
+    }
+    .single-product .left-image:hover img {
+      transform: scale(1.02);
+    }
+    .single-product .rtl {
+      padding: 10px 20px;
+    }
+    .single-product .rtl h4 {
+      font-weight: 400;
+      font-size: 1rem;
+      line-height: 2.2;
+      color: #1a2f44;
+      background: #fff;
+      padding: 28px 30px;
+      border-radius: 24px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.04);
+      border-right: 5px solid #3a86ff;
+      margin: 0;
+    }
+    .single-product .rtl h4 strong {
+      color: #0b1f33;
+      font-weight: 700;
+      display: block;
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+    }
+    .single-product .rtl h4 .highlight {
+      color: #3a86ff;
+      font-weight: 600;
+    }
+    .single-product .rtl h4 .gold-text {
+      color: #3a86ff;
+      font-weight: 600;
+    }
+    .sep {
+      margin: 30px 0 0;
+      border-top: 2px dashed #dce5f0;
+    }
+
+    /* Footer */
+    footer {
+      background: #0b1f33;
+      padding: 25px 0 15px;
+      color: #c8dbe9;
+      border-top: 4px solid #3a86ff;
+      text-align: center;
+    }
+    footer p {
+      margin: 3px 0;
+      font-size: 0.9rem;
+    }
+    footer p i {
+      color: #3a86ff;
+      margin: 0 5px;
+    }
+
+    /* Responsive */
+    @media (max-width: 992px) {
+      .single-product .rtl h4 {
+        padding: 20px;
+        font-size: 0.95rem;
+      }
+      .single-product .rtl {
+        padding: 20px 0 0;
+      }
+    }
+    @media (max-width: 768px) {
+      .page-heading h3 { font-size: 1.8rem; }
+      .single-product .rtl h4 {
+        font-size: 0.9rem;
+        padding: 16px;
+      }
+    }
+
+    /* Fallback image styling */
+    .fallback-image {
+      width: 100%;
+      height: 100%;
+      min-height: 300px;
+      background: linear-gradient(135deg, #1b3b5c 0%, #0b1f33 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 1.2rem;
+      padding: 20px;
+      text-align: center;
+    }
+    .fallback-image i {
+      font-size: 3rem;
+      color: #3a86ff;
+      display: block;
+      margin-bottom: 15px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Preloader -->
+<div id="js-preloader" class="js-preloader">
+  <div class="loader"></div>
+</div>
+
+<!-- Header -->
+<header class="header-area">
+  <div class="container">
+    <div class="main-nav">
+      <ul class="nav" id="mainNav">
+        <li><a href="index.html"><i class="fas fa-home"></i> خانه</a></li>
+        <li><a href="contact.html"><i class="fas fa-address-card"></i> درباره ما</a></li>
+        <li><a href="#" class="active"><i class="fas fa-question-circle"></i> آیا AA برای شماست؟</a></li>
+        <li><a href="#"><i class="fas fa-map-pin"></i> آدرس جلسات</a></li>
+        <li><a href="https://search.eitaa.com/?url=https://drive.google.com/file/d/1xxkrunuuBk-DpH8304ROuikieVzjiV3P/view?usp=drivesdkl" class="highlight-link"><i class="fas fa-download"></i> دریافت فایل</a></li>
+      </ul>
+      <a class="menu-trigger" id="menuTrigger"><i class="fas fa-bars"></i></a>
+    </div>
+  </div>
+</header>
+
+<!-- Page Heading -->
+<section class="page-heading">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <h3><i class="fas fa-question-circle"></i> آیا الکلی‌های ناشناس برای شماست؟</h3>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Content -->
+<section class="single-product">
+  <div class="container">
+    <div class="row g-4 align-items-center">
+      <!-- Image -->
+      <div class="col-lg-6">
+        <div class="left-image">
+          <img 
+            src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&h=400&fit=crop&crop=center&auto=format" 
+            alt="الکلیسم و بهبودی - حمایت و امید" 
+            loading="lazy" 
+            width="600" 
+            height="400"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+          >
+          <div class="fallback-image" style="display:none;">
+            <div>
+              <i class="fas fa-hands-helping"></i>
+              <p>الکلی‌های ناشناس<br>مسیر بهبودی و امید</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Text Content -->
+      <div class="col-lg-6 rtl">
+        <h4>
+          <strong><i class="fas fa-info-circle" style="color:#3a86ff;"></i> الکلیسم چیست؟</strong>
+          در مورد ماهیت واقعی الکلیسم عقاید متفاوتی وجود دارد. توضیح قابل قبول در مورد اکثر اعضای انجمن
+          الکلی‌های ناشناس این است که الکلیسم یک <span class="highlight">بیماری پیش‌رونده</span> است که شاید هیچگاه درمان نشود؛ اما مانند
+          دیگر بیماری‌ها میتواند متوقف گردد. یک گام جلوتر در می‌یابیم که اکثر افرادِ عضو انجمن الکلی‌های ناشناس
+          احساس میکنند که این بیماری ترکیبی از <span class="gold-text">حساسیت جسمانی به الکل</span> و <span class="gold-text">وسوسه‌ی ذهنی به نوشیدن مشروب</span>
+          است که فارغ از هرگونه عواقبی به تنهایی با استفاده از نیروی اراده نمی‌توان جلوی آن را گرفت. پیش از بیان
+          این نظریه اکثر الکلی‌هایی که قادر به متوقف کردن مصرف الکل نبودند گمان میکردند که از لحاظ اخلاقی
+          ضعیف هستند یا احتمالاً تعادل روانی ندارند.
+          <br><br>
+          <span class="highlight">عقیده‌ی انجمن الکلی‌های ناشناس</span> این است که الکلی‌ها بیمارانی هستند که اگر یک برنامه ساده که موفقیت
+          آن اثبات شده است را دنبال کنند میتوانند بهبود یابند. برنامه‌ای که در مورد بیش از <span class="gold-text">دو میلیون مرد و زن</span>
+          موفقیت‌آمیز بوده است.
+        </h4>
+      </div>
+      <div class="col-lg-12">
+        <div class="sep"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <p><i class="fas fa-heart" style="color:#3a86ff;"></i> الکلی‌های ناشناس ناحیه ۱۴ خدماتی · زیر نظر ساختار ایران · تهران</p>
+        <p class="small opacity-75">تمامی حقوق نزد الکلی‌های ناشناس ناحیه ۱۴ خدماتی ایران، نجف‌آباد محفوظ میباشد</p>
+        <p class="small mt-1"><i class="far fa-clock"></i> بهبودی یک روز در میان ...</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Scripts -->
+<script>
+  // Preloader
+  window.addEventListener('load', function() {
+    const preloader = document.getElementById('js-preloader');
+    preloader.classList.add('hidden');
+    setTimeout(() => { preloader.style.display = 'none'; }, 400);
+  });
+
+  // Mobile menu toggle
+  const trigger = document.getElementById('menuTrigger');
+  const nav = document.getElementById('mainNav');
+  if (trigger) {
+    trigger.addEventListener('click', function(e) {
+      e.preventDefault();
+      nav.classList.toggle('show');
+    });
+  }
+
+  // Close menu on link click (mobile)
+  document.querySelectorAll('#mainNav a').forEach(link => {
+    link.addEventListener('click', () => {
+      if (window.innerWidth < 992) nav.classList.remove('show');
+    });
+  });
+</script>
+
+<!-- Bootstrap JS (deferred) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" defer></script>
+</body>
+</html>

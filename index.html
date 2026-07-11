@@ -1,167 +1,472 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>الکلی‌های ناشناس · ناحیه ۱۴</title>
 
-  <head>
+  <!-- Preconnect for faster CDN -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <!-- Optimized Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
-    <title>الکلی های ناشناس ناحیه ۱۴</title>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap 5 (RTL) - async -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.rtl.min.css" media="all" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.rtl.min.css"></noscript>
 
+  <style>
+    /* ===== CRITICAL CSS ===== */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f4f7fc;
+      color: #102a43;
+      line-height: 1.6;
+    }
+    .rtl { direction: rtl; text-align: right; }
+    a { text-decoration: none; color: inherit; }
 
-    <!-- Additional CSS Files -->
-    <link rel="stylesheet" href="assets/css/fontawesome.css">
-    <link rel="stylesheet" href="assets/css/templatemo-lugx-gaming.css">
-    <link rel="stylesheet" href="assets/css/owl.css">
-    <link rel="stylesheet" href="assets/css/animate.css">
-    <link rel="stylesheet"href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
-<!--
+    /* Preloader */
+    .js-preloader {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: #0b1f33;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      transition: opacity 0.4s ease;
+    }
+    .js-preloader.hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+    .loader {
+      width: 40px;
+      height: 40px;
+      border: 4px solid rgba(255,255,255,0.1);
+      border-top: 4px solid #3a86ff;
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
 
-TemplateMo 589 lugx gaming
+    /* Header */
+    .header-area {
+      background: #0b1f33;
+      padding: 10px 0;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      backdrop-filter: blur(4px);
+      background: rgba(11, 31, 51, 0.95);
+      border-bottom: 2px solid rgba(58, 134, 255, 0.3);
+    }
+    .main-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      flex-wrap: wrap;
+    }
+    .nav li a {
+      color: #e3edf7;
+      font-weight: 500;
+      font-size: 0.95rem;
+      padding: 5px 12px;
+      border-radius: 40px;
+      transition: 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .nav li a:hover,
+    .nav li a.active {
+      background: #3a86ff;
+      color: #fff;
+    }
+    .nav .highlight-link {
+      background: #3a86ff;
+      color: #fff;
+      font-weight: 600;
+      padding: 7px 20px;
+      border-radius: 40px;
+    }
+    .nav .highlight-link:hover {
+      background: #5a9aff;
+    }
+    .menu-trigger {
+      display: none;
+      color: #fff;
+      font-size: 1.4rem;
+      cursor: pointer;
+    }
+    @media (max-width: 992px) {
+      .nav {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        padding: 15px 0 8px;
+        border-top: 1px solid rgba(255,255,255,0.08);
+      }
+      .nav.show { display: flex; }
+      .menu-trigger { display: block; }
+    }
 
-https://templatemo.com/tm-589-lugx-gaming
+    /* Banner */
+    .main-banner {
+      background: linear-gradient(145deg, #0b1f33 0%, #1b3b5c 100%);
+      padding: 60px 0 70px;
+      color: #fff;
+      border-bottom: 6px solid #3a86ff;
+    }
+    .main-banner h1 {
+      font-weight: 700;
+      font-size: 2.8rem;
+      line-height: 1.2;
+    }
+    .main-banner h1 i {
+      color: #5a9aff;
+      margin-left: 8px;
+    }
+    .main-banner h3 {
+      font-weight: 300;
+      font-size: 1.7rem;
+      color: #c8dbe9;
+    }
+    .main-banner h2 {
+      font-weight: 600;
+      font-size: 1.9rem;
+      background: rgba(58, 134, 255, 0.12);
+      display: inline-block;
+      padding: 8px 28px;
+      border-radius: 60px;
+      border-right: 4px solid #3a86ff;
+      backdrop-filter: blur(2px);
+      margin-top: 12px;
+    }
+    .right-image img {
+      width: 100%;
+      max-width: 420px;
+      border-radius: 32px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+      border: 2px solid rgba(58, 134, 255, 0.3);
+      transition: 0.4s;
+    }
+    .right-image img:hover {
+      transform: scale(1.02);
+      border-color: #3a86ff;
+    }
+    .search-input {
+      margin-top: 25px;
+    }
+    .search-input .btn-primary {
+      background: #3a86ff;
+      color: #fff;
+      font-weight: 600;
+      padding: 10px 28px;
+      border-radius: 60px;
+      border: none;
+      transition: 0.25s;
+      display: inline-block;
+    }
+    .search-input .btn-primary:hover {
+      background: #5a9aff;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(58, 134, 255, 0.35);
+    }
+    .search-input .btn-outline-light {
+      border: 2px solid #c8dbe9;
+      color: #c8dbe9;
+      padding: 10px 28px;
+      border-radius: 60px;
+      transition: 0.25s;
+      display: inline-block;
+    }
+    .search-input .btn-outline-light:hover {
+      background: #3a86ff;
+      border-color: #3a86ff;
+      color: #fff;
+    }
 
--->
-  </head>
+    /* Features */
+    .features {
+      padding: 50px 0 30px;
+      background: #f4f7fc;
+    }
+    .features .item {
+      background: #ffffff;
+      border-radius: 28px;
+      padding: 28px 16px 22px;
+      text-align: center;
+      box-shadow: 0 10px 28px rgba(0,0,0,0.04);
+      transition: 0.3s ease;
+      height: 100%;
+      border: 1px solid #edf2f7;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .features .item:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 24px 48px rgba(0,0,0,0.08);
+      border-color: #3a86ff;
+      background: #ffffff;
+    }
+    .features .item .image {
+      background: #e6f0ff;
+      width: 72px;
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 60px;
+      margin-bottom: 16px;
+      transition: 0.3s;
+    }
+    .features .item:hover .image {
+      background: #3a86ff;
+    }
+    .features .item:hover .image i {
+      color: #fff !important;
+    }
+    .features .item h4 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #1b2b3e;
+      margin: 8px 0 0;
+      line-height: 1.4;
+    }
+    .features .col-lg-3 {
+      margin-bottom: 24px;
+    }
 
+    /* Quick Callout */
+    .callout-bar {
+      padding: 20px 0;
+      background: #fff;
+      border-top: 2px solid #3a86ff;
+      border-bottom: 2px solid #3a86ff;
+    }
+    .callout-bar p {
+      margin: 0;
+      font-size: 1.1rem;
+    }
+    .callout-bar .btn-dark {
+      background: #0b1f33;
+      border-radius: 60px;
+      padding: 8px 28px;
+      border: 2px solid #3a86ff;
+      display: inline-block;
+      color: #fff;
+      font-weight: 600;
+    }
+    .callout-bar .btn-dark:hover {
+      background: #3a86ff;
+    }
+
+    /* Footer */
+    footer {
+      background: #0b1f33;
+      padding: 30px 0 20px;
+      color: #c8dbe9;
+      border-top: 4px solid #3a86ff;
+      text-align: center;
+    }
+    footer p {
+      margin: 4px 0;
+      font-size: 0.95rem;
+      letter-spacing: 0.3px;
+    }
+    footer p i {
+      color: #3a86ff;
+      margin: 0 6px;
+    }
+    .footer-links a {
+      color: #c8dbe9;
+      margin: 0 12px;
+      font-size: 0.9rem;
+      transition: 0.2s;
+      display: inline-block;
+    }
+    .footer-links a:hover {
+      color: #5a9aff;
+      transform: translateY(-2px);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .main-banner h1 { font-size: 2rem; }
+      .main-banner h3 { font-size: 1.3rem; }
+      .main-banner h2 { font-size: 1.4rem; padding: 6px 18px; }
+      .right-image img { max-width: 100%; }
+      .callout-bar p { font-size: 0.95rem; }
+    }
+
+    .text-blue { color: #3a86ff; }
+  </style>
+</head>
 <body>
 
-  <!-- ***** Preloader Start ***** -->
-  <div id="js-preloader" class="js-preloader">
-    <div class="preloader-inner">
-      <span class="dot"></span>
-      <div class="dots">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
+<!-- Preloader -->
+<div id="js-preloader" class="js-preloader">
+  <div class="loader"></div>
+</div>
+
+<!-- Header -->
+<header class="header-area">
+  <div class="container">
+    <div class="main-nav">
+      <ul class="nav" id="mainNav">
+        <li><a href="index.html" class="active"><i class="fas fa-home"></i> خانه</a></li>
+        <li><a href="contact.html"><i class="fas fa-address-card"></i> درباره ما</a></li>
+        <li><a href="IsAAForYou.html"><i class="fas fa-question-circle"></i> آیا AA برای شماست؟</a></li>
+        <li><a href="https://search.eitaa.com/?url=https://drive.google.com/file/d/1xxkrunuuBk-DpH8304ROuikieVzjiV3P/view?usp=drivesdkl" class="highlight-link"><i class="fas fa-download"></i> فایل آدرس جلسات</a></li>
+      </ul>
+      <a class="menu-trigger" id="menuTrigger"><i class="fas fa-bars"></i></a>
     </div>
   </div>
-  <!-- ***** Preloader End ***** -->
+</header>
 
-  <!-- ***** Header Area Start ***** -->
-  <header class="header-area header-sticky">
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <nav class="main-nav">
-                    <!-- ***** Logo Start ***** -->
-                    <!-- <a href="index.html" class="logo">
-                        <img src="assets/images/logo.png" alt="" style="width: 158px;">
-                    </a> -->
-                    <!-- ***** Logo End ***** -->
-                    <!-- ***** Menu Start ***** -->
-                    <ul class="nav">
-                      <li><a href="contact.html">درباره ما</a></li>
-                      <li><a href="shop.html">آدرس جلسات</a></li>
-                      <li><a href="product-details.html">آیا الکلی های ناشناس برای شماست؟</a></li>
-                      <!-- <li><a href="#">Sign In</a></li> -->
-                  </ul>   
-                    <a class='menu-trigger'>
-                        <span>Menu</span>
-                    </a>
-                    <!-- ***** Menu End ***** -->
-                </nav>
-            </div>
-        </div>
-    </div>
-  </header>
-  <!-- ***** Header Area End ***** -->
-
-  <div class="main-banner">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-6 align-self-center">
-          <div class="caption header-text rtl">
-            <h1>آیا شما هم با نوشیدن الکل مشکل دارید؟</h1>
-            <br>
-            <h3>خوشبختانه راه نجاتی وجود دارد...</h3>
-            <br>
-            <h2>الکلی های ناشناس <br> ناحیه چهاردهم خدماتی <br>ایران - نجف آباد</h2>
-            <div class="search-input">
-
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 offset-lg-2">
-          <div class="right-image">
-            <img src="assets/images/banner-image.jpg" alt="">
+<!-- Banner -->
+<section class="main-banner">
+  <div class="container">
+    <div class="row align-items-center gy-5">
+      <div class="col-lg-6">
+        <div class="caption rtl">
+          <h1><i class="fas fa-hand-holding-heart"></i> آیا شما هم با نوشیدن الکل مشکل دارید؟</h1>
+          <h3 class="mt-3">خوشبختانه راه نجاتی وجود دارد...</h3>
+          <h2 class="mt-4">الکلی‌های ناشناس <br> ناحیه چهاردهم خدماتی <br> ایران · نجف‌آباد</h2>
+          <div class="search-input mt-4">
+            <a href="contact.html" class="btn-primary"><i class="fas fa-phone-alt me-2"></i> با ما تماس بگیرید</a>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-
-  <div class="features">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-3 col-md-6">
-          <a href="#">
-            <div class="item">
-              <div class="image">
-                <img src="assets/images/featured-01.png" alt="" style="max-width: 44px;">
-              </div>
-              <h4>وبسایت رسمی الکلی های ناشناس ایران</h4>
-            </div>
-          </a>
-        </div>
-        <div class="col-lg-3 col-md-6">
-          <a href="#">
-            <div class="item">
-              <div class="image">
-                <img src="assets/images/featured-02.png" alt="" style="max-width: 44px;">
-              </div>
-              <h4>درباره ما</h4>
-            </div>
-          </a>
-        </div>
-        <div class="col-lg-3 col-md-6">
-          <a href="#">
-            <div class="item">
-              <div class="image">
-                <img src="assets/images/featured-03.png" alt="" style="max-width: 44px;">
-              </div>
-              <h4>آیا الکلی های ناشناس برای شماست؟</h4>
-            </div>
-          </a>
-        </div>
-        <div class="col-lg-3 col-md-6">
-          <a href="#">
-            <div class="item">
-              <div class="image">
-                <img src="assets/images/featured-04.png" alt="" style="max-width: 44px;">
-              </div>
-              <h4>آدرس جلسات</h4>
-            </div>
-          </a>
+      <div class="col-lg-6">
+        <div class="right-image text-center">
+          <img src="https://images.unsplash.com/photo-1584820927498-cfe5211fd8bf?w=400&h=300&fit=crop&crop=center&auto=format" alt="امید و حمایت" class="img-fluid" loading="lazy" width="400" height="300">
         </div>
       </div>
     </div>
   </div>
+</section>
 
-  <footer>
-    <div class="container">
+<!-- Features -->
+<section class="features">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-lg-3 col-md-6">
+        <a href="https://iranaa.org/" target="_blank">
+          <div class="item">
+            <div class="image"><i class="fas fa-globe-asia fa-2x" style="color:#0b1f33;"></i></div>
+            <h4>وبسایت رسمی الکلی‌های ناشناس ایران</h4>
+          </div>
+        </a>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <a href="contact.html">
+          <div class="item">
+            <div class="image"><i class="fas fa-users fa-2x" style="color:#0b1f33;"></i></div>
+            <h4>درباره ما</h4>
+          </div>
+        </a>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <a href="IsAAForYou.html">
+          <div class="item">
+            <div class="image"><i class="fas fa-heart fa-2x" style="color:#0b1f33;"></i></div>
+            <h4>آیا الکلی‌های ناشناس برای شماست؟</h4>
+          </div>
+        </a>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <a href="#">
+          <div class="item">
+            <div class="image"><i class="fas fa-location-dot fa-2x" style="color:#0b1f33;"></i></div>
+            <h4>آدرس جلسات</h4>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Quick Callout -->
+<section class="callout-bar">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-md-8">
+        <p><i class="fas fa-phone text-blue me-3"></i> خط کمک: ۰۲۱-XXXX-XXXX  ·  <i class="fas fa-clock text-blue mx-2"></i> ۲۴ ساعته، هر روز</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
       <div class="col-lg-12">
-        <br>
-        <br>
-        <p> الکلی های ناشناس ناحیه ۱۴ خدماتی زیر نظر ساختار ایران - تهران میباشد &nbsp;&nbsp;</p>
-        <p> تمامی حقوق نزد الکلی های ناشناس ناحیه ۱۴ خدماتی ایران، نجف آباد محفوظ میباشد &nbsp;&nbsp;</p>
+        <div class="footer-links mb-3">
+          <a href="index.html"><i class="fas fa-chevron-left"></i> خانه</a>
+          <a href="contact.html"><i class="fas fa-chevron-left"></i> درباره ما</a>
+          <a href="#"><i class="fas fa-chevron-left"></i> جلسات</a>
+          <a href="https://iranaa.org/" target="_blank"><i class="fas fa-chevron-left"></i> ایران AA</a>
+        </div>
+        <p><i class="fas fa-heart" style="color:#3a86ff;"></i> الکلی‌های ناشناس ناحیه ۱۴ خدماتی · زیر نظر ساختار ایران · تهران</p>
+        <p class="small opacity-75">تمامی حقوق نزد الکلی‌های ناشناس ناحیه ۱۴ خدماتی ایران، نجف‌آباد محفوظ میباشد</p>
+        <p class="small mt-2"><i class="far fa-clock"></i> بهبودی یک روز در میان ...</p>
       </div>
     </div>
-  </footer>
+  </div>
+</footer>
 
-  <!-- Scripts -->
-  <!-- Bootstrap core JavaScript -->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-  <script src="assets/js/isotope.min.js"></script>
-  <script src="assets/js/owl-carousel.js"></script>
-  <script src="assets/js/counter.js"></script>
-  <script src="assets/js/custom.js"></script>
+<!-- Scripts -->
+<script>
+  // Preloader
+  window.addEventListener('load', function() {
+    const preloader = document.getElementById('js-preloader');
+    preloader.classList.add('hidden');
+    setTimeout(() => { preloader.style.display = 'none'; }, 400);
+  });
 
-  </body>
+  // Mobile menu toggle
+  const trigger = document.getElementById('menuTrigger');
+  const nav = document.getElementById('mainNav');
+  if (trigger) {
+    trigger.addEventListener('click', function(e) {
+      e.preventDefault();
+      nav.classList.toggle('show');
+    });
+  }
+
+  // Close menu on link click (mobile)
+  document.querySelectorAll('#mainNav a').forEach(link => {
+    link.addEventListener('click', () => {
+      if (window.innerWidth < 992) nav.classList.remove('show');
+    });
+  });
+</script>
+
+<!-- Bootstrap JS (deferred) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" defer></script>
+</body>
 </html>
