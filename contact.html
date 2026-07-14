@@ -337,9 +337,8 @@
       <ul class="nav" id="mainNav">
         <li><a href="index.html"><i class="fas fa-home"></i> خانه</a></li>
         <li><a href="#" class="active"><i class="fas fa-address-card"></i> درباره ما</a></li>
-        <li><a href="#"><i class="fas fa-map-pin"></i> آدرس جلسات</a></li>
         <li><a href="IsAAForYou.html"><i class="fas fa-question-circle"></i> آیا AA برای شماست؟</a></li>
-        <li><a href="https://search.eitaa.com/?url=https://drive.google.com/file/d/1xxkrunuuBk-DpH8304ROuikieVzjiV3P/view?usp=drivesdkl" class="highlight-link"><i class="fas fa-download"></i> دریافت فایل</a></li>
+        <li><a href="https://drive.google.com/file/d/1xxkrunuuBk-DpH8304ROuikieVzjiV3P/view?usp=drivesdkl" class="highlight-link"><i class="fas fa-download"></i> فایل آدرس جلسات</a></li>
       </ul>
       <a class="menu-trigger" id="menuTrigger"><i class="fas fa-bars"></i></a>
     </div>
@@ -378,7 +377,15 @@
           <ul>
             <li>
               <span><i class="fas fa-location-dot"></i> آدرس دفتر مرکزی</span>
-              تهران - خیابان ... - پلاک ...
+             تهران, خیابان ایرانشهر, 
+            </li>
+            <li>
+              <span><i class="fas fa-phone"></i> شماره کمیته پذیرش تهران</span>
+              ۰۹۹۶۵۲۹۲۷۳۸
+            </li>
+            <li>
+              <span><i class="fas fa-phone"></i> شماره مدیرعامل</span>
+              ۰۹۹۶۵۲۹۲۵۳۷
             </li>
             <li>
               <span><i class="fas fa-phone"></i> شماره ماندگار ناحیه ۱۴</span>
@@ -402,55 +409,39 @@
           <div class="section-heading">
             <h6><i class="fas fa-pen me-2" style="color:#3a86ff;"></i> پیامتان را برایمان بنویسید. ما در اسرع وقت با شما تماس می‌گیریم</h6>
           </div>
-          
-          <!-- Status Messages -->
-          <div id="form-status"></div>
-          
-          <!-- ============================================ -->
-          <!-- 🔴 IMPORTANT: Get your Formspree ID below    -->
-          <!-- ============================================ -->
-          <form id="contact-form" action="https://formspree.io/f/mqapjgvp" method="POST">
-            <div class="row g-2">
-              <div class="col-lg-6">
-                <fieldset>
-                  <input type="text" name="name" id="name" placeholder="نام کامل" autocomplete="on" required>
-                </fieldset>
-              </div>
-              <div class="col-lg-6">
-                <fieldset>
-                  <input type="email" name="email" id="email" placeholder="ایمیل" required>
-                </fieldset>
-              </div>
-              <div class="col-lg-12">
-                <fieldset>
-                  <input type="text" name="phone" id="phone" placeholder="شماره تماس (اختیاری)">
-                </fieldset>
-              </div>
-              <div class="col-lg-12">
-                <fieldset>
-                  <textarea name="message" id="message" placeholder="پیام شما ..." required></textarea>
-                </fieldset>
-              </div>
-              <div class="col-lg-12">
-                <fieldset>
-                  <!-- Honeypot to prevent spam -->
-                  <input type="text" name="_gotcha" style="display:none">
-                  <!-- Redirect after success -->
-                  <input type="hidden" name="_next" value="https://your-website.com/thankyou.html">
-                  <!-- Subject of email -->
-                  <input type="hidden" name="_subject" value="📩 پیام جدید از سایت الکلی‌های ناشناس">
-                  <button type="submit" id="form-submit" class="orange-button">
-                    <i class="fas fa-paper-plane"></i> ارسال پیام
-                  </button>
-                </fieldset>
-              </div>
-            </div>
-          </form>
-        </div>
-      </div>
+<!-- Replace your form with this -->
+<form id="contact-form" action="https://formspree.io/f/xqerazbl" method="POST">
+  <div class="row g-2">
+    <div class="col-lg-6">
+      <fieldset>
+        <input type="text" name="name" placeholder="نام کامل" required>
+      </fieldset>
+    </div>
+    <div class="col-lg-6">
+      <fieldset>
+        <input type="email" name="email" placeholder="ایمیل" required>
+      </fieldset>
+    </div>
+    <div class="col-lg-12">
+      <fieldset>
+        <input type="text" name="phone" placeholder="شماره تماس (اختیاری)">
+      </fieldset>
+    </div>
+    <div class="col-lg-12">
+      <fieldset>
+        <textarea name="message" placeholder="پیام شما ..." required></textarea>
+      </fieldset>
+    </div>
+    <div class="col-lg-12">
+      <fieldset>
+        <input type="text" name="_gotcha" style="display:none">
+        <button type="submit" class="orange-button">
+          <i class="fas fa-paper-plane"></i> ارسال پیام
+        </button>
+      </fieldset>
     </div>
   </div>
-</section>
+</form>
 
 <!-- Footer -->
 <footer>
